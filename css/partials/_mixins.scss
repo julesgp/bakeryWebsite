@@ -1,0 +1,23 @@
+// GENERAL
+
+@mixin flex ($direction) {
+	display:flex;
+	flex-direction:$direction;
+}
+
+@mixin background-img($url, $size, $repeat, $position){
+	background-image: url($url);
+	background-size: $size;
+	background-repeat: $repeat;
+	background-position: $position;
+}
+
+@mixin strip-list{
+	list-style:none;
+	padding-left:0;
+}
+@mixin section-title{
+	color:$orange;
+	font-size:40px;
+}
+

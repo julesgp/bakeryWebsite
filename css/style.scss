@@ -1,0 +1,832 @@
+@import "partials/normalize";
+@import "partials/variables";
+@import "partials/_mixins";
+@import "partials/header";
+@import "partials/social-media";
+@import "partials/galleries";
+@import "partials/forms";
+@import "partials/footer";
+
+//**************************//
+
+//Default styles//
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Rufina;
+	font-weight: normal;
+	margin:0;
+} 
+
+header, main, footer{
+	font-family: Raleway;
+}
+
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+//**************************//
+
+// P R O D U C T S 
+
+.products-location{
+	@include flex(row);
+	padding-bottom:60px;
+	padding-top:120px;
+}
+
+.products{
+	@include strip-list;
+	text-align:center;
+}
+
+.products img{
+	height:120px;
+	width:150px;
+	filter: contrast(170%) opacity(75%) saturate(130%) hue-rotate(60deg);
+}
+
+#croissant{
+	height:120px;
+	width:120px;
+}
+
+.product-title{
+	font-family: Rufina;
+	font-size:25px;
+	font-weight:bold;
+	margin:10px auto 5px auto;
+}
+
+.product-description{
+	font-family: Raleway;
+	font-size:14px;
+	margin:10px auto 0 auto;
+	color:$light-gray;
+	padding-right:35px;
+	padding-left:35px;
+	line-height: 20px;
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.products-location{
+		@include flex(column);
+		padding-bottom:50px;
+		padding-top:50px;
+	}
+
+	.products{
+		width:100%;
+		margin-top:20px;
+	}
+
+	.product-description{
+		font-family: Raleway;
+		width:60%;
+		font-size:14px;
+		margin:10px auto 0 auto;
+		color:$light-gray;
+		padding-right:35px;
+		padding-left:35px;
+		line-height: 20px;
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.__wrapper-products{
+		padding-top:20px;
+	}
+
+}
+
+
+
+// M E N U 
+
+.menu{
+	color:white;
+	@include background-img("../assets/menubg.png", cover, no-repeat, center);
+	font-family:Raleway;
+}
+
+.__menu-main{
+	@include flex(column);
+	padding-bottom:100px;
+}
+
+.menu-title{
+	width:100%;
+	text-align:center;
+	margin:50px auto 20px auto;
+}
+
+.__menu-title--background{
+	margin:0 auto 30px auto;
+	height:170px;
+	width:270px;
+	@include background-img("../assets/menu.png", contain, no-repeat, center);
+	@include flex(column);
+	justify-content:center;
+		h2{
+		font-size:40px;
+	}
+}
+
+.__menu-sections{
+	@include flex(row);
+	width:100%;
+	justify-content:space-between;
+	ul{
+		@include strip-list;
+	}
+}
+
+.__menu-section{
+	@include flex(column);
+	width:40%;
+	height:480px;
+	padding:40px 30px 0 30px;
+	border:3px double gray;
+	box-shadow: 0 0 0 2px gray;
+	h2{
+		margin-top:0;
+		margin-bottom:10px;
+		color:$orange;
+		text-decoration: underline;
+	}
+}
+
+.menu-selection{
+	@include flex(row);
+	h4 {
+		font-family: Raleway;
+		margin:0;
+	}
+	p{
+		margin:0;
+		font-size:12px;
+		color:$light-gray;
+		margin-top:10px;
+	}
+}
+
+.menu-items{
+	@include flex(column);
+	width:90%;
+}
+
+.menu-prices{
+	@include flex(column);
+	width:20%;
+	text-align:right;
+}
+
+.__selection-one{
+	height:100%;
+	li{
+		height:20%;
+	}
+}
+
+.__selection-two{
+	height:50%;
+	li{
+		height:33.33%;
+	}	
+}
+
+.__selection-three{
+	height:40%;
+	li{
+		height:33.33%;
+	}	
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.__menu-section{
+	padding:30px 20px 0 20px;
+	}
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.__menu-sections{
+		margin:0 auto;
+		@include flex(column);
+		width:80%;
+		justify-content:center;
+		padding-left:20px;
+	}
+
+	.__menu-section{
+		width:80%;
+		margin-top:30px;
+	}
+}
+
+
+// A B O U T
+
+.about{
+	@include background-img("../assets/aboutbg.png",cover, no-repeat, center);
+
+}
+
+.__about-section{
+	@include flex(column);
+	justify-content:center;
+	padding-top:100px;
+	padding-bottom:100px;
+}
+
+.__about-section--position{
+	width:50%;
+	h2{
+		@include section-title;
+		margin-bottom:60px;
+	}
+	p{
+		color:gray;
+		font-size:15px;
+		line-height: 25px;
+	}
+	img{
+		margin-top:50px;
+		width:100px;
+		height:25px;
+	}
+}
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.about{
+		background-position:35% 50%;
+	}
+
+	.__about-section{
+		padding-top:60px;
+	}
+	.__about-section--position{
+		width:55%;
+		text-align:center;
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.__about-section--position{
+		width:80%;
+		margin:0 auto;
+	}
+
+	.about{
+		background-position: left;
+	}
+}
+
+// G A L L E R Y 
+
+.gallery-section{
+	@include background-img("../assets/gallerybg.jpg", cover, no-repear, center);
+	padding-top:50px;
+	padding-bottom:100px;
+}
+
+.__gallery-wrapper{
+	@include flex(column);
+	h2{
+		margin-top:50px;
+		width:100%;
+		padding-bottom:30px;
+		@include section-title;
+	}
+}
+
+.gallery-main{
+	@include flex(row);
+	justify-content:space-between;
+}
+
+.gallery-menu{
+	width:23%;
+	height:48%;
+	background-color: white;
+	border:3px double black;
+	box-shadow: 0 0 0 2px black;
+	margin-top:19px;
+	direction:rtl;
+	li{
+		margin-top:20px;
+		font-family:Rufina;
+		font-size:14px;
+	}
+}
+
+.active{
+	color:$orange;
+	list-style: circle;
+
+}
+
+.gallery{
+	width:74%;
+}
+
+.gallery-pictures{
+	@include flex(row);
+	flex-wrap:wrap;
+	@include strip-list;
+	justify-content: flex-start;
+	li{
+		width:33.33%;
+		img{
+			width:100%;
+			height:100%;
+		}
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.__gallery-wrapper{
+		h2{
+			text-align:center;
+			margin-top:20px;
+			padding-bottom:10px;
+		}
+	}
+	.gallery-main{
+		@include flex(column);
+		justify-content:space-between;
+	}
+
+	.gallery-menu{
+		width: 100%;
+		direction:none;
+		margin-bottom:20px;
+		ul{
+			text-align:center;
+			padding:0;
+			li{
+				display:inline-block;
+				margin-top:0;
+				margin-right:15px;
+				font-size:16px;
+			}
+
+		}
+	}
+
+	.gallery{
+		width:100%;
+	}
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+	.gallery-section{
+		padding-bottom:50px;
+	}
+
+	.gallery-menu{
+		width:70%;
+		margin:0 auto;
+	}
+
+	.gallery-pictures{
+		li{
+			width:90%;
+			margin:10px auto;
+		}
+	}	
+}
+
+// J O U R N A L
+
+.journal-section{
+	@include background-img("../assets/journalbg.png", cover, no-repeat, center);
+	padding-bottom:100px;
+}
+
+.__journal-wrapper{
+	@include flex(column);
+	h2{
+		@include section-title;
+		margin-top:100px;
+	}
+}
+
+.journal{
+	@include flex(row);
+	flex-wrap:wrap;
+	width:100%;
+	margin-top:50px;
+}
+
+.__content{
+	display:flex;
+	width:33.33%;
+	position:relative;
+}
+
+.__content img{
+	width:100%;
+	height:100%;
+}
+
+.overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background-color:white;
+	opacity:0.8;
+	visibility: hidden;
+	p{
+		margin-left:10%;
+	}
+	p:first-child{
+		background-color:$orange;
+		color:white;
+		width:80px;
+		padding:2px 5px 2px 10px;
+		margin-top:10%;
+		font-size:9px;
+	}
+	p:last-child{
+		color:$light-gray;
+		width:80%;
+		line-height: 20px;
+		font-size:12px;
+		margin-top:20px;
+	}
+	h3{
+		margin-left:10%;
+	}	
+}
+
+.__content:hover .overlay{
+	visibility:visible;
+	transition-duration: 2s;
+}
+
+.__content5{
+	background-color:white;
+	@include flex(column);
+	p{
+		margin-left:10%;
+	}
+	p:first-child{
+		background-color:$orange;
+		color:white;
+		width:80px;
+		padding:2px 5px 2px 10px;
+		margin-top:10%;
+		font-size:9px;
+	}
+	p:last-child{
+		color:$light-gray;
+		width:80%;
+		line-height: 20px;
+		font-size:12px;
+		margin-top:20px;
+	}
+	h3{
+		margin-left:10%;
+	}
+	
+}
+
+.journal-button{
+	text-align:center;
+	margin-top:90px;
+}
+.journal-button--link{
+	font-size: 13px;
+	text-decoration: none;
+	color:$orange;
+	border:1px solid $orange;
+	padding:10px 17px 10px 17px;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.__journal-wrapper{
+	h2{
+		@include section-title;
+		margin-top:50px;
+		text-align:center;
+	}
+}
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.journal-section{
+		padding-bottom:50px;
+	}
+
+	.__content{
+		display:flex;
+		width:90%;
+		margin:10px auto;
+	}
+
+	.journal-button--link{
+		font-size: 15px;
+		padding:15px 35px 15px 35px;
+	}
+}
+
+// R E S E R V A T I O N S 
+
+.reservations-section{
+	@include background-img("../assets/reservationbg.png", cover, no-repeat, center);
+}
+
+.__reservations-wrapper{
+	padding-top:100px;
+	padding-bottom:100px;
+	h2{
+		@include section-title;
+	}
+}
+
+.reservations-main{
+	margin-top:50px;
+	@include flex(row);
+	justify-content:space-between;
+}
+
+.reservations-info{
+	width:30%;
+	height:50%;
+	p{
+		margin:0;
+		font-size:12px;
+		line-height: 25px;
+		padding-bottom:30px;
+	}
+}
+
+.reservations-info--box{
+	@include flex(row);
+	justify-content:center;
+	border:3px double black;
+	box-shadow: 0 0 0 2px black;
+	margin-top:40px;
+	padding:20px 10px 20px 10px;
+
+}
+
+.phone-resos{
+	font-size:40px;
+	color:$orange;
+	width:30%;
+	text-align:center;
+}
+
+.reso-call{
+	width:70%;
+}
+
+.reservations-form{
+	border:3px double gray;
+	box-shadow: 0 0 0 2px black;
+	width:65%;
+}
+
+.reservations-form--main{
+	@include flex(column);
+	width:100%;
+}
+
+.form--date-and-time, .form--people-and-name, .form--email-and-phone {
+	@include flex(row);
+	width:100%;
+}
+
+#date, #time, #people, #name, #email, #phone{
+	width:49%;
+	height:50px;
+	margin:0;
+	appearance:none;
+	border:1px solid black;
+	padding-left:20px;
+	color:black;
+}
+
+#date{
+	@include background-img("../assets/calendar.svg", 50px 50px, no-repeat, right); // Calendar by Allen from the Noun Project
+}
+
+#time{
+	@include background-img("../assets/timer.svg", 50px 50px, no-repeat, right); // clock by Mark Aventura from the Noun Project
+
+}
+
+#message{
+	width:calc(100%-5%);
+	height:200px;
+	padding-left:20px;
+	color:black;
+}
+
+#submit{
+	width:100%;
+	height:90px;
+	color:black;
+	border:1px solid black;
+	background-color:white;
+	@include background-img("../assets/seal.png", contain, no-repeat, left);
+}
+
+.reservations-form input[type="text"]{
+	border: 0.5px solid black;
+	color:black;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.__reservations-wrapper{
+		padding-top:50px;
+		padding-bottom:100px;
+		h2{
+			@include section-title;
+			text-align:center;
+		}
+	}
+
+	.phone-resos{
+		font-size:40px;
+		color:$orange;
+		width:30%;
+		text-align:center;
+	}
+
+	.reservations-info{
+		width:35%;
+	}
+
+	.reservations-form{
+		width:60%;
+	}
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+	.reservations-main{
+		@include flex(column);
+		justify-content:space-between;
+	}
+
+	.reservations-info{
+		width:90%;
+		margin:0 auto 20px;
+		p{
+			padding-right:20px;
+			padding-left:20px;
+			text-align:center;
+			font-size:12px;
+			line-height: 20px;
+			padding-bottom:10px;
+		}
+
+	}
+
+	.reservations-form{
+		width:90%;
+		margin:0 auto;
+	}
+
+	.reservations-info--box{
+		margin-top:20px;
+	}
+}
+
+// C O N T A C T 
+
+.contact-section{
+	@include background-img("../assets/contactbg.png", cover, no-repeat, center);
+	padding-top:100px;
+	padding-bottom:100px;
+	h2{
+		@include section-title;
+	}
+
+}
+
+.contact-info{
+	@include flex(row);
+	justify-content:space-between;
+}
+
+.contact-info--general{
+	width:46%;
+}
+
+.info-list{
+		@include strip-list;
+		margin-bottom:30px;
+	}
+
+.fa-map-marker, .phone-contact, .fa-envelope{
+	color:$orange;
+	font-size:20px;
+	margin-right:10px;
+}
+
+.fa-twitter-square, .fa-facebook-square, .fa-google-plus-square, .fa-youtube-square, .fa-instagram, .fa-yelp{
+	color:$orange;
+	font-size:20px;
+	margin-right:5px;
+}
+
+.social-media-fonts{
+	margin-bottom:30px;
+}
+
+.contact-info--form{
+	width:46%;
+}
+
+.contact-info--form-inputs{
+	@include flex(column);
+	border:3px double gray;
+	box-shadow: 0 0 0 2px black;
+}
+
+.contact-info--form-inputs input[type="text"]{
+	padding-left:20px;
+	border: 0.5px solid black;
+}
+
+.contact-element{
+	width:100%;
+}
+
+#contact-name, #contact-phone, #contact-email{
+	height:60px;
+}
+
+#contact-message{
+	height:220px;
+}
+
+#contact-submit{
+	height:120px;
+	background-color:white;
+	@include background-img("../assets/seal.png", contain, no-repeat, left);
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.contact-section{
+		padding-top:50px;
+		h2{
+			@include section-title;
+			text-align:center;
+			margin-bottom:30px;
+		}
+	}
+	.contact-info{
+		text-align: center;
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.contact-info{
+		@include flex(column);
+		justify-content:space-between;
+	}
+
+	.contact-info--general{
+		width:70%;
+		margin:0 auto;
+	}
+
+	.contact-info--form{
+		width:90%;
+		margin:30px auto 0 auto;
+	}
+
+}

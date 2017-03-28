@@ -1,0 +1,108 @@
+footer{
+	@include background-img("../assets/footerbg.png", cover, no-repeat, center);
+}
+
+.__footer-main{
+	@include flex(row);
+	padding-top:100px;
+	padding-bottom:100px;
+	h5{
+		font-family:Raleway;
+		color:white;
+	}
+}
+
+.__footer-section{
+	@include flex(column);
+	justify-content:left;
+	width:33.33%;
+	ul{
+		@include strip-list;
+	}
+}
+
+.__footer-section--social{
+	p{
+		color:white;
+		font-size:13px;
+		line-height: 20px;
+	}
+
+}
+
+.media-space{
+	margin-bottom:10px;
+}
+
+.link{
+	color:$orange;
+}
+
+.tweets{
+	margin-bottom:30px;
+}
+
+.__footer-section--custom{
+	padding-left:30px;
+	ul{
+		li{
+			color:$orange;
+			font-size:13px;
+			margin-top:5px;
+		}
+	}
+
+}
+
+.hours-footer{
+	margin-bottom:20px;
+}
+
+.hours-open li{
+	color:white;
+	font-size:13px;
+}
+
+.latest-journal li{
+	color:$orange;
+	font-size:13px;
+	margin-top:5px;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.__footer-section--custom{
+		padding-left:80px;
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+	.__footer-main{
+		@include flex(column);
+		padding-top:50px;
+		padding-bottom:50px;
+	}
+
+	.__footer-section{
+		justify-content:center;
+		text-align:center;
+	}
+
+	.__footer-section--social{
+		width:90%;
+		margin:0 auto;
+	}
+
+	.__footer-section--custom{
+		width:90%;
+		margin:30px auto;
+		padding-left:0;
+	}
+
+	.__footer-section--hours{
+		width:90%;
+		margin:0 auto;
+	}
+}
